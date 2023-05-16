@@ -19,6 +19,6 @@ export const ButtonDelete = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover,
   :focus {
-    background-color: #e28090;
+    background-color: #cac4b0;
   }
 `;

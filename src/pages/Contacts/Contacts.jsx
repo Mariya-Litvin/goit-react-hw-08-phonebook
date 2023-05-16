@@ -6,7 +6,12 @@ import { Helmet } from 'react-helmet';
 // import { Toaster } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
-import { ContactsWrapper, WrapperForm } from './Contacts.styled';
+import {
+  ContactsWrapper,
+  FormContainer,
+  WrapperFormContacts,
+  WrapperFormName,
+} from './Contacts.styled';
 import bgContacts from '../../image/bgContacts.jpg';
 
 const Contacts = () => {
@@ -22,13 +27,15 @@ const Contacts = () => {
         <title>Contacts</title>
       </Helmet>
       <ContactsWrapper style={{ backgroundImage: `url(${bgContacts})` }}>
-        <WrapperForm>
-          <h1>Phonebook</h1>
-          <ContactForm />
-          <h2>Contacts</h2>
-          <Filter />
-          <ContactList />
-        </WrapperForm>
+        <FormContainer>
+          <WrapperFormName>
+            <ContactForm />
+          </WrapperFormName>
+          <WrapperFormContacts>
+            <Filter />
+            <ContactList />
+          </WrapperFormContacts>
+        </FormContainer>
       </ContactsWrapper>
     </>
   );

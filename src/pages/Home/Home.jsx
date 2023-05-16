@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { HomeText, HomeWrapper } from './Home.styled';
+import { HomeText, HomeTextGo, HomeWrapper } from './Home.styled';
 import bgHome from '../../image/bgHome.jpg';
 import { useAuth } from 'hooks/useAuth';
 import { Link } from 'react-router-dom';
@@ -14,10 +14,10 @@ const Home = () => {
       </Helmet>
       <HomeWrapper style={{ backgroundImage: `url(${bgHome})` }}>
         {isLoggedIn ? (
-          <h2>
+          <HomeTextGo>
             Go to
             <Link to="/contacts"> Contacts</Link>
-          </h2>
+          </HomeTextGo>
         ) : (
           <HomeText>
             Welcome! Glad to see you in the Contacts app! You can register or

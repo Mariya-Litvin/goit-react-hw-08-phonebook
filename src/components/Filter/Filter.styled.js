@@ -8,8 +8,8 @@ export const WrapperFilter = styled.div`
 `;
 
 export const FilterText = styled.p`
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
 `;
 
 export const InputFilter = styled.input`

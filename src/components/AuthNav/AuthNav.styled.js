@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const LinkActive = styled(NavLink)`
+export const AuthNavActive = styled(NavLink)`
   padding: 8px 15px;
   border-radius: 4px;
   text-decoration: none;
