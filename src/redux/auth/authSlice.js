@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 const { createSlice } = require('@reduxjs/toolkit');
 const { register, logIn, logOut, refreshUser } = require('./authOperations');
 
@@ -18,10 +20,18 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
+      .addCase(register.rejected, (state, action) => {
+        toast.error(
+          `Invalid registration data: You should enter a more secure password or another email`
+        );
+      })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+      })
+      .addCase(logIn.rejected, (state, action) => {
+        toast.error(`Please enter valid registration details`);
       })
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
